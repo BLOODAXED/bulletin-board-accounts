@@ -17,6 +17,7 @@
       <thead>
         <th>Title</th>
         <th>Body</th>
+        <th>Listed By</th>
         <th>Expires on</th>
         <th>Posted on</th>
       </thead>
@@ -32,6 +33,13 @@
 
             <td>
               <%= a_listing.body %>
+            </td>
+
+            <td>
+              <%= a_listing.user.email %>
+              <% if current_user != nil and a_listing.user.email == current_user.email%>
+              <a href="/delete_listing/<%=a_listing.id%>">Delete listing</a>
+              <% end %>
             </td>
 
             <td>
