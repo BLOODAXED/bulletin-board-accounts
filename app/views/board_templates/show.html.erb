@@ -1,10 +1,11 @@
 <nav aria-label="breadcrumb">
   <ul>
     <li><a href="/">Home</a></li>
-
     <li><%= @the_board.name %></li>
   </ul>
 </nav>
+
+<li>Managed by <%= @the_board.user.email %></li>
 
 <article>
   <header>
